@@ -97,7 +97,7 @@ ul li a:hover {
 :root{
   --duration: 9s;       /* full loop length (3 words * 3s each) */
   --font-size: 2.5rem;
-  --accent: #000000;
+  --accent: #0e0d0d;
 }
 
 h1{
@@ -120,6 +120,7 @@ h1{
 
 /* words stacked */
 .rotator__word{
+  color: rgb(9, 9, 185);
   position: absolute;
   top: 0; left: 0;
   opacity: 0;
