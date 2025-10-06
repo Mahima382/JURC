@@ -20,7 +20,6 @@ html {
     justify-content: center;
     animation: change 10s infinite ease-in-out;
 }
-
 .content {
     position: absolute;
     top: 50%;
@@ -165,4 +164,20 @@ h1{
 
 .card h1 {
     font-size: 40px;
+}
+.join-btn {
+display: inline-block;
+margin-top: 20px;
+background-color: #5229e4;
+color: white;
+text-decoration: none;
+font-size: 18px;
+padding: 10px 25px;
+border-radius: 8px;
+transition: background-color 0.3s, transform 0.2s;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.join-btn:hover {
+background-color: #33e75a;
+transform: scale(1.05);
 }
