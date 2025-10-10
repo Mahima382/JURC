@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robotics Club - Login</title>
+  <link rel="stylesheet" href="styleforloginreg.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <div class="login-card">
+    <h2>Welcome Back 🤖</h2>
+    <p class="subtitle">Login to your Robotics Club account</p>
+    <input type="text" id="loginUsername" placeholder="Enter Username" required>
+    <input type="password" id="loginPassword" placeholder="Enter Password" required>
+    <button onclick="login()">Login</button>
+    <p>Don’t have an account? <a href="registration.html">Register</a></p>
+  </div>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById("loginUsername").value.trim();
+      const password = document.getElementById("loginPassword").value.trim();
+      const storedUser = JSON.parse(localStorage.getItem("roboticsUser"));
+
+      if (!storedUser) {
+        alert("No user found! Please register first.");
+        window.location.href = "registration.html";
+        return;
+      }
+
+      if (username === storedUser.username && password === storedUser.password) {
+        alert(`Login successful! Welcome, ${storedUser.username} (${storedUser.role}) 🤖`);
+      } else {
+        alert("Incorrect username or password!");
+      }
+    }
+  </script>
+
+</body>
+</html>
