@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robotics Club - Register</title>
+  <link rel="stylesheet" href="styleforloginreg.css">
+</head>
+<body>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Supporter</h3>
+      <p>Be a proud supporter of our robotics initiatives.</p>
+      <button onclick="openForm()">Join Us</button>
+    </div>
+    <div class="card">
+      <h3>Mentor</h3>
+      <p>Guide our members with your expertise and experience.</p>
+      <button onclick="openForm()">Join Us</button>
+    </div>
+    <div class="card">
+      <h3>Leader</h3>
+      <p>Lead a project team to success in our club activities.</p>
+      <button onclick="openForm()">Join Us</button>
+    </div>
+    <div class="card">
+      <h3>Member</h3>
+      <p>Join as a member and explore robotics with us.</p>
+      <button onclick="openForm()">Join Us</button>
+    </div>
+  </div>
+
+  <!-- Registration Form -->
+  <div class="container" id="registerForm" style="display:none;">
+    <h2>Register</h2>
+    <input type="text" id="username" placeholder="Enter Username" required>
+     <input type="email" id="email" placeholder="Enter Email" required>
+    <input type="password" id="password" placeholder="Enter Password" required>
+
+     <select id="role" required>
+      <option value="">Select Role</option>
+      <option value="Supporter">Supporter</option>
+      <option value="Mentor">Mentor</option>
+      <option value="Leader">Leader</option>
+      <option value="Member">Member</option>
+    </select>
+    
+    <button onclick="register()">Register</button>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+  </div>
+
+  <div id="successPopup" class="popup-overlay" style="display:none;">
+    <div class="popup-card">
+      <h3>✅ Registration Successful!</h3>
+      <p>Your account has been created successfully.</p>
+      <button onclick="goToLogin()">Go to Login</button>
+    </div>
+  </div>
+  
+  <script>
+    function openForm() {
+      document.getElementById("registerForm").style.display = "block";
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function register() {
+      const username = document.getElementById("username").value.trim();
+       const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const role = document.getElementById("role").value;
+
+      if (!username || !email || !password || !role) {
+        alert("Please fill in all fields!");
+        return;
+      }
+
+      // Save in localStorage
+      localStorage.setItem("roboticsUser", JSON.stringify({ username, email, password, role }));
+      alert(`Registration successful as ${role}! Redirecting to login...`);
+      window.location.href = "login.html";
+    }
+  </script>
+
+
+</body>
+</html>
