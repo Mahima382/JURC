@@ -7,7 +7,7 @@ let selectedType = "all";
 let selectedStatus = "upcoming";
 
 // Fetch events from backend
-fetch("getEvents.php")
+fetch("php_files/getEvents.php")
   .then((res) => {
     if (!res.ok) throw new Error("Failed to fetch events from server");
     return res.json();
@@ -76,6 +76,12 @@ function renderEvents() {
     eventsGrid.appendChild(card);
   });
 }
+setTimeout(() => {
+  document.querySelectorAll(".event-card").forEach((card, index) => {
+    card.style.animationDelay = `${index * 0.1}s`;
+    card.classList.add("show");
+  });
+}, 100);
 
 // Handle join button click
 function joinEvent(id, name) {

@@ -38,6 +38,20 @@ nav h2 {
     color: rgb(89, 60, 219);
 }
 
+.logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+
+}
+
 /* Body & Container */
 body {
     background: linear-gradient(135deg, #0c284f 0%, #516b85 100%);
