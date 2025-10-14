@@ -2,7 +2,7 @@ let selectedCategory = "";
 const categoriesContainer = document.getElementById("categoriesContainer");
 
 // Fetch members dynamically
-fetch("php_files/registration.php")
+fetch("php_files/members.php")
   .then(res => res.json())
   .then(data => renderCategories(data))
   .catch(err => console.error(err));
@@ -64,19 +64,19 @@ regForm.addEventListener("submit", function(e){
 
 function register() {
   const username = document.getElementById("username").value.trim();
-  const name = document.getElementById("Name").value.trim();
+  const name = document.getElementById("name").value.trim();
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
   const image = document.getElementById("image").files[0];
 
-  if (!username || !Name || !email || !password || !image) {
-    alert("Please fill all fields and select an image!");
+  if (!username || !name || !email || !password) {
+    alert("Please fill all fields! Image is optional.");
     return;
   }
 
   const formData = new FormData();
   formData.append("username", username);
-  formData.append("Name", Name);
+  formData.append("Name", name);
   formData.append("email", email);
   formData.append("password", password);
   formData.append("category", selectedCategory);
