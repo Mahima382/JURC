@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Robotics Club — Projects</title>
+  <link rel="stylesheet" href="css_files/project.css">
+  <style id="inline-fallback">
+    body {
+      background: #fff;
+      color: #000
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <img src="images/logo.png" alt="uni logo" class="logo-img">
+    <img src="images/jurc.jpg" alt="club logo" class="logo-img">
+    <h2>Jahagirnagar University Robotics Club</h2>
+    <ul class="nav-opt">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="project.html">Projects</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="wrap" id="wrap">
+    <div class="overlay-dim" id="overlay"></div>
+
+    <div class="app-inner" id="appInner">
+      <div class="container">
+        <header>
+          <h1>🤖 Robotics Club — Projects</h1>
+          <div class="filters">
+            <button class="btn ghost" onclick="filter('all')">All</button>
+            <button class="btn ghost" onclick="filter('soccer')">Soccer Board</button>
+            <button class="btn ghost" onclick="filter('lfr')">LFR (Line Follower)</button>
+            <button class="btn ghost" onclick="filter('drone')">Drone</button>
+          </div>
+        </header>
+
+        <main>
+          <section class="grid" id="projectsGrid"></section>
+        </main>
+
+        <footer>© <span id="year"></span> Robotics Club — <span>Innovating the Future</span></footer>
+      </div>
+    </div>
+
+    <div class="detail-panel" id="detailPanel" aria-hidden="true">
+      <div class="detail-card" id="detailCard">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <h2 id="detailTitle" style="margin:0;color:var(--accent)"></h2>
+            <p id="detailTags" style="margin:6px 0;color:var(--muted)"></p>
+          </div>
+          <button class="close-btn" id="closeBtn">Close</button>
+        </div>
+
+        <img id="detailImage" src="" alt="project image" style="margin-top:12px;border-radius:10px" />
+
+        <div class="detail-row">
+          <div class="detail-meta">
+            <h4 style="margin:0 0 6px 0">Description</h4>
+            <p id="detailDesc" style="color:var(--muted);line-height:1.5;margin:0"></p>
+
+            <h4 style="margin-top:12px">Team</h4>
+            <p id="detailTeam" style="color:var(--muted);margin:0"></p>
+
+            <h4 style="margin-top:12px">Tech</h4>
+            <p id="detailTech" style="color:var(--muted);margin:0"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js_files/project.js"></script>
+  <script>
+    // diagnostic: remove inline fallback after load
+    (function () {
+      window.addEventListener('load', () => {
+        const inline = document.getElementById('inline-fallback');
+        if (inline) inline.remove();
+      });
+    })();
+  </script>
+</body>
+
+</html>

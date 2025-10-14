@@ -7,52 +7,56 @@ body, html {
   background: rgba(128, 128, 128, 0.1);
   color: #2e2a2a;
 }
-
-/* Navbar */
+/* Navbar matching index page */
 nav {
-  background-color: gray;
-  color: whitesmoke;
-  height: 6rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 4rem;
-}
-
-.logo-img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
+    background-color: gray;
+    color: whitesmoke;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4rem;
 }
 
 nav h2 {
-  font-size: 20px;
-  margin-left: 15px;
+    margin: 0;
+    font-size: 1.5rem;
 }
 
+
 .nav-opt {
-  display: flex;
+    display: flex;
 }
 
 .nav-opt li {
-  margin-left: 20px;
-  list-style: none;
+    list-style: none;
+    margin-left: 20px;
 }
 
 .nav-opt li a {
-  color: aliceblue;
-  text-decoration: none;
-  transition: 0.5s;
+    color: whitesmoke;
+    text-decoration: none;
+    transition: 0.5s;
+    font-weight: 500;
 }
 
-.nav-opt li a:hover {
-  color: rgb(89, 60, 219);
+.nav-opt li a:hover,
+.nav-opt li a.active {
+    color: rgb(89, 60, 219);
 }
 
-.contact-btn {
-  background: rgb(89, 60, 219);
-  padding: 6px 12px;
-  border-radius: 6px;
+.logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+
 }
 
 /* Container */
@@ -188,4 +192,3 @@ nav h2 {
   .animated-heading {
     font-size: 2rem;
   }
-}

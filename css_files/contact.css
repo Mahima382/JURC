@@ -8,58 +8,57 @@ body, html {
   color: #2e2a2a;
 }
 
-/* Navbar (same as homepage) */
-/* Navbar container */
+/* Navbar matching index page */
 nav {
+    background-color: gray;
+    color: whitesmoke;
+    height: 6rem;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* space between logo+title and menu */
-    background-color: gray;
+    justify-content: center;
     padding: 0 4rem;
-    height: 6rem;
-    color: whitesmoke;
-    box-sizing: border-box;
 }
 
-/* Logo */
-nav .logo-img {
-    width: 130px;
-    height: 130px;
+nav h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+
+.nav-opt {
+    display: flex;
+}
+
+.nav-opt li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+.nav-opt li a {
+    color: whitesmoke;
+    text-decoration: none;
+    transition: 0.5s;
+    font-weight: 500;
+}
+
+.nav-opt li a:hover,
+.nav-opt li a.active {
+    color: rgb(89, 60, 219);
+}
+
+.logo-img {
+    width: 100px;
+    height: 100px;
     object-fit: contain;
 }
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
 
-/* Club name centered */
-nav h2 {
-    flex: 1; /* take remaining space */
-    text-align: center;
-    font-size: 1.5rem;
-    margin: 0;
-    color: whitesmoke;
 }
-
-/* Menu items on the right horizontally */
-nav ul.nav-opt {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-/* Menu links styling */
-nav ul.nav-opt li a {
-    text-decoration: none;
-    color: whitesmoke;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-/* Hover and active link */
-nav ul.nav-opt li a:hover,
-nav ul.nav-opt li a.active {
-    color: #0073e6;
-}
-
 
 /* Container: 3 equal vertical parts */
 .container {
