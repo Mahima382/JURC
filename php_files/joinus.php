@@ -40,7 +40,7 @@ if(file_exists("users.txt")){
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Join Us - JURC</title>
-<link rel="stylesheet" href="css_files/joinusstyle.css">
+<link rel="stylesheet" href="/JURC/css_files/joinusstyle.css">
 </head>
 <body>
 <h2 style="text-align:center; margin-bottom:40px;">Join Us - Meet Our Club</h2>
