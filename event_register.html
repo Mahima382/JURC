@@ -1,29 +1,27 @@
-<form id="registrationForm">
-    <h2>Register for Event</h2>
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="tel" name="phone" placeholder="Mobile Number">
-    <input type="hidden" name="event_id" id="event_id">
-    <button type="submit">Submit</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register for Event</title>
+  <link rel="stylesheet" href="css_files/event_register.css">
+</head>
+<body>
+  <form id="registrationForm">
+      <h2>Register for Event</h2>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Mobile Number">
+      <input type="hidden" name="event_id" id="event_id">
+      <button type="submit">Submit</button>
+  </form>
 
-<script>
-    // Get event_id from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const eventId = urlParams.get('event_id');
-    document.getElementById('event_id').value = eventId;
-
-    document.getElementById('registrationForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        const formData = new FormData(this);
-
-        fetch('register.php', {
-            method: 'POST',
-            body: formData
-        })
-        .then(res => res.text())
-        .then(msg => alert(msg))
-        .catch(err => alert("Error registering."));
+  <script src="js_files/event_register.js"></script>
+  <script>
+    window.addEventListener("load", function() {
+        document.body.classList.add("loaded");
     });
 </script>
+
+</body>
+</html>

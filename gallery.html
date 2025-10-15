@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | JURC</title>
+  <style>
+    /* Global reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f0f0f0;
+      color: #222;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: gray;
+      color: whitesmoke;
+      height: 6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 4rem;
+    }
+
+    .logo-img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+    }
+
+    .nav-opt {
+      display: flex;
+      margin-left: 40px;
+    }
+
+    ul li {
+      margin-left: 20px;
+      list-style: none;
+    }
+
+    ul li a {
+      color: aliceblue;
+      text-decoration: none;
+      transition: 0.5s;
+      font-weight: bold;
+    }
+
+    ul li a:hover {
+      color: rgb(89, 60, 219);
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 50px 20px 20px;
+      background: linear-gradient(to right, #0e0d0d, #434343);
+      color: white;
+      animation: fadeDown 1s ease-out;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Gallery Grid */
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 50px;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      background-color: #fff;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      aspect-ratio: 1 / 1; /* makes all images square */
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Caption on hover */
+    .caption {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      padding: 8px;
+      font-size: 0.9rem;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: all 0.4s ease;
+    }
+
+    .gallery-item:hover .caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Drive Section */
+    .drive-section {
+      background: linear-gradient(to right, #dcdcdc, #f0f0f0);
+      padding: 50px 20px;
+      text-align: center;
+      box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .drive-section h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .drive-box {
+      display: inline-block;
+      width: 80%;
+      background: white;
+      border-radius: 15px;
+      padding: 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s ease;
+    }
+
+    .drive-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .drive-box iframe {
+      width: 100%;
+      height: 400px; /* reduced size */
+      border: none;
+      border-radius: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: #0e0d0d;
+      color: #eee;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive Fixes */
+    @media (max-width: 600px) {
+      .drive-box iframe {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <img src="/JURC/images/jurc.jpg" alt="club logo" class="logo-img">
+    <h2>Jahagirnagar University Robotics Club</h2>
+    <ul class="nav-opt">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="gallery.html" style="color: rgb(89, 60, 219);">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Our Gallery</h1>
+    <p>Explore the moments of innovation, creativity, and teamwork at JURC</p>
+  </header>
+
+  <!-- Gallery Section -->
+  <div class="gallery-container">
+    <div class="gallery-item">
+      <img src="/JURC/images/gal1.jpeg" alt="Gallery Image 1">
+      <div class="caption">Soccer Bots</div>
+    </div>
+    <div class="gallery-item">
+      <img src="/JURC/images/gal2.jpg" alt="Gallery Image 2">
+      <div class="caption">Line Track</div>
+    </div>
+    <div class="gallery-item">
+      <img src="/JURC/images/gal3.jpg" alt="Gallery Image 3">
+      <div class="caption">LFR</div>
+    </div>
+  </div>
+
+  <!-- Google Drive Folder Embed -->
+  <section class="drive-section">
+    <h2>More Photos on Google Drive</h2>
+    <div class="drive-box">
+      <iframe 
+        src="https://drive.google.com/embeddedfolderview?id=17ht8XSahADfkpZUwj8aCb3uxeDn2YWro#grid">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Jahangirnagar University Robotics Club | All Rights Reserved
+  </footer>
+</body>
+</html>

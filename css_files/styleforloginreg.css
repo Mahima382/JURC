@@ -154,13 +154,7 @@ a:hover {
 }
 
 /* === LOGIN PAGE STYLING === */
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  background: #040151;
-}
+
 
 .login-card {
   background: #1c2440;

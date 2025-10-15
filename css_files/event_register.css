@@ -1,0 +1,116 @@
+/* General body styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #d3dce6, #8ca6db); /* ash-blue gradient */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Fade-in effect on page load */
+body.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form container */
+form {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Form heading */
+form h2 {
+    margin-bottom: 20px;
+    color: #334e68;
+}
+
+/* Input fields */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="password"],
+form input[type="file"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #556cd6;
+    box-shadow: 0 0 8px rgba(85,108,214,0.3);
+}
+
+/* Buttons */
+form button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #556cd6;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background-color: #3b50a0;
+    box-shadow: 0 0 10px rgba(85,108,214,0.5);
+}
+
+/* Optional: smaller cancel button */
+form .close-btn {
+    background-color: #aaa;
+    margin-left: 10px;
+}
+
+form .close-btn:hover {
+    background-color: #888;
+}
+
+/* Success popup styling */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-card {
+    background: #fff;
+    padding: 25px 35px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.popup-card h3 {
+    margin-bottom: 15px;
+    color: #28a745;
+}
+
+.popup-card button {
+    background-color: #556cd6;
+}
